@@ -10,6 +10,7 @@ void testMatAddition();
 void testMatVectorMultiplication();
 void testMatDeterminant();
 void testMatAdjoint();
+void testMatInverse();
 
 int main()
 {
@@ -17,6 +18,7 @@ int main()
     testMatVectorMultiplication();
     testMatDeterminant();
     testMatAdjoint();
+    testMatInverse();
 }
 
 void testMatAddition()
@@ -150,4 +152,40 @@ void testMatAdjoint()
         }
     }
     delete adjPtr;
+}
+
+void testMatInverse()
+{
+    auto mat = SquareMatrix(3);
+    int rows[3][3]{
+        {2,-3,1},
+        {2,0,-1},
+        {1,4,5},
+    };
+
+    auto expected = SquareMatrix(3);
+    int rowsExpected[3][3]{
+        {4/49, 19/49, 3/49},
+        {-11/49, 9/49, 4/49},
+        {8/49, -11/49, 16/49},
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat[i][j] = rows[i][j];
+            expected[i][j] = rowsExpected[i][j];
+        }
+    }
+    auto invPtr = mat.inv();
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++) {
+            if ((*invPtr)[i][j] != expected[i][j])
+            {
+                cout << "FAILED: INVERSE TEST" << endl;
+            }
+        }
+    }
+    delete invPtr;
 }

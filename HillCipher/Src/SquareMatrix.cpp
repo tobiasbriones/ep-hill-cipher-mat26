@@ -90,8 +90,25 @@ SquareMatrix* SquareMatrix::adj() const
 
 SquareMatrix* SquareMatrix::inv() const
 {
-	auto* inv = new SquareMatrix(n);
-	return inv;
+	auto determinant = det();
+
+	if (determinant == 0)
+	{
+		throw "The matrix must not be singular";
+	}
+	auto adjPtr = adj();
+	auto invPtr = new SquareMatrix(n);
+
+	// TODO implement scalar multiplication operator
+	auto factor = 1 / determinant;
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			(*invPtr)[i][j] = factor * (*adjPtr)[i][j];
+		}
+	}
+	delete adjPtr;
+	return invPtr;
 }
 
 int SquareMatrix::computeDeterminant(const SquareMatrix& mat)

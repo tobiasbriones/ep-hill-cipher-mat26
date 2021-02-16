@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="Src\HillCipher.cpp" />
     <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Src\SquareMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\HillCipher.h" />
+    <ClInclude Include="Src\SquareMatrix.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

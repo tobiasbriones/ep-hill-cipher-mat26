@@ -53,25 +53,24 @@ int SquareMatrix::size() const
 	return n;
 }
 
-int SquareMatrix::det()
+int SquareMatrix::det() const
 {
 	return computeDeterminant(*this);
 }
 
-SquareMatrix* SquareMatrix::inv() const
+SquareMatrix* SquareMatrix::adj() const
 {
-	auto* result = new SquareMatrix(n);
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-		}
-	}
-	return result;
+	auto* adj = new SquareMatrix(n);
+	return adj;
 }
 
-int SquareMatrix::computeDeterminant(SquareMatrix& mat)
+SquareMatrix* SquareMatrix::inv() const
+{
+	auto* inv = new SquareMatrix(n);
+	return inv;
+}
+
+int SquareMatrix::computeDeterminant(const SquareMatrix& mat)
 {
 	int n = mat.size();
 

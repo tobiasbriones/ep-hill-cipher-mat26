@@ -11,7 +11,7 @@ private:
 	int n;
 	int** matrix;
 
-	static int computeDeterminant(SquareMatrix&);
+	static int computeDeterminant(const SquareMatrix&);
 
 public:
 	SquareMatrix(int);
@@ -20,7 +20,8 @@ public:
 	int* operator[](int) const;
 	SquareMatrix* operator+(const SquareMatrix&) const;
 	int size() const;
-	int det();
+	int det() const;
+	SquareMatrix* adj() const;
 	SquareMatrix* inv() const;
 
 };

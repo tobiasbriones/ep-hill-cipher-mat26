@@ -20,7 +20,6 @@ public:
 	int* operator[](int) const;
 	SquareMatrix* operator+(const SquareMatrix&) const;
 	int size() const;
-	void set(int, int, int);
 	int det();
 	SquareMatrix* inv() const;
 

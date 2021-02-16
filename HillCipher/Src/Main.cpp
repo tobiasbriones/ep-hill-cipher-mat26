@@ -38,8 +38,8 @@ void testMatAddition()
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            mat.set(i, j, rows[i][j]);
-            mat1.set(i, j, rows1[i][j]);
+            mat[i][j] = rows[i][j];
+            mat1[i][j] = rows1[i][j];
         }
     }
     auto sumPtr = mat + mat1;
@@ -70,7 +70,7 @@ void testMatDeterminant()
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            mat.set(i, j, rows[i][j]);
+            mat[i][j] = rows[i][j];
         }
     }
     auto det = mat.det();

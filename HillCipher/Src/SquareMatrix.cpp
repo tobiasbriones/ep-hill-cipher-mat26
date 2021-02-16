@@ -36,25 +36,21 @@ SquareMatrix* SquareMatrix::operator+(const SquareMatrix& other) const
 	if (n != other.size()) {
 		throw "Matrices must have the same size";
 	}
-	auto *result = new SquareMatrix(n);
+	auto *resultPtr = new SquareMatrix(n);
 
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			result->set(i, j, matrix[i][j] + other[i][j]);
+			(*resultPtr)[i][j] = matrix[i][j] + other[i][j];
 		}
 	}
-	return result;
+	return resultPtr;
 }
 
 int SquareMatrix::size() const
 {
 	return n;
-}
-
-void SquareMatrix::set(int i, int j, int value) {
-	matrix[i][j] = value;
 }
 
 int SquareMatrix::det()

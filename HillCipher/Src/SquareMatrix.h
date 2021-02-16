@@ -33,5 +33,6 @@ public:
 	int det26() const;
 	SquareMatrix* adj() const;
 	SquareMatrix* inv() const;
+	SquareMatrix* inv26() const;
 
 };

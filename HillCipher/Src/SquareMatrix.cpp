@@ -116,6 +116,30 @@ SquareMatrix* SquareMatrix::inv() const
 	return invPtr;
 }
 
+SquareMatrix* SquareMatrix::inv26() const
+{
+	auto determinant = det26();
+
+	if (determinant == 0)
+	{
+		throw "The matrix must not be singular";
+	}
+	auto adjPtr = adj();
+	auto invPtr = new SquareMatrix(n);
+
+	// TODO implement scalar multiplication operator
+	auto factor = modInverse(determinant, 26);
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			auto product = factor * (*adjPtr)[i][j];
+			(*invPtr)[i][j] = mod26(product);
+		}
+	}
+	delete adjPtr;
+	return invPtr;
+}
+
 int SquareMatrix::computeDeterminant(const SquareMatrix& mat)
 {
 	int n = mat.size();

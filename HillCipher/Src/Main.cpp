@@ -9,6 +9,7 @@ using namespace std;
 void testMatAddition();
 void testMatVectorMultiplication();
 void testMatDeterminant();
+void testMatDeterminant26();
 void testMatAdjoint();
 void testMatInverse();
 
@@ -17,6 +18,7 @@ int main()
     testMatAddition();
     testMatVectorMultiplication();
     testMatDeterminant();
+    testMatDeterminant26();
     testMatAdjoint();
     testMatInverse();
 }
@@ -114,6 +116,28 @@ void testMatDeterminant()
     if (det != 49)
     {
         cout << "FAILED: DETERMINANT TEST" << endl;
+    }
+}
+
+void testMatDeterminant26()
+{
+    auto mat = SquareMatrix(3);
+    int rows[3][3]{
+        {10, 5, 12},
+        {3, 14, 21},
+        {8, 9, 11},
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat[i][j] = rows[i][j];
+        }
+    }
+    auto det = mat.det26();
+
+    if (det != 7)
+    {
+        cout << "FAILED: DETERMINANT26 TEST" << endl;
     }
 }
 

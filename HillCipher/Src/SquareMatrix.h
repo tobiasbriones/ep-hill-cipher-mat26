@@ -17,6 +17,7 @@ private:
 	static int computeDeterminant(const SquareMatrix&);
 	static void getMinorMat(const SquareMatrix&, SquareMatrix&, int, int);
 	static void getAdjoint(const SquareMatrix&, SquareMatrix&);
+	static int mod26(int);
 
 public:
 	SquareMatrix(int);
@@ -27,6 +28,7 @@ public:
 	vector<int>* operator*(const vector<int>&) const;
 	int size() const;
 	int det() const;
+	int det26() const;
 	SquareMatrix* adj() const;
 	SquareMatrix* inv() const;
 

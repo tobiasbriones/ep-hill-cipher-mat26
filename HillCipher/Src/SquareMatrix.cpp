@@ -81,6 +81,11 @@ int SquareMatrix::det() const
 	return computeDeterminant(*this);
 }
 
+int SquareMatrix::det26() const
+{
+	return mod26(computeDeterminant(*this));
+}
+
 SquareMatrix* SquareMatrix::adj() const
 {
 	auto adjPtr = new SquareMatrix(n);
@@ -190,4 +195,15 @@ void SquareMatrix::getAdjoint(const SquareMatrix& mat, SquareMatrix& adj)
 			adj[j][i] = sign * temp.det();
 		}
 	}
+}
+
+int SquareMatrix::mod26(int value)
+{
+	if (value < 0)
+	{
+		value *= -1;
+		value %= 26;
+		return 26 - value;
+	}
+	return value % 26;
 }

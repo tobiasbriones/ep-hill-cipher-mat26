@@ -48,6 +48,29 @@ SquareMatrix* SquareMatrix::operator+(const SquareMatrix& other) const
 	return resultPtr;
 }
 
+vector<int>* SquareMatrix::operator*(const vector<int>& vec) const
+{
+	if (n != vec.size()) {
+		throw "Vector must have the same size as the matrix";
+	}
+
+	auto productPtr = new vector<int>(n);
+
+	for (int i = 0; i < n; i++)
+	{
+		auto rowSum = 0;
+
+		for (int j = 0; j < n; j++)
+		{
+			auto aij = matrix[i][j];
+			auto xj = vec.at(j);
+			rowSum += aij * xj;
+		}
+		(*productPtr)[i] = rowSum;
+	}
+	return productPtr;
+}
+
 int SquareMatrix::size() const
 {
 	return n;

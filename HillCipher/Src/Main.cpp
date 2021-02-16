@@ -6,12 +6,14 @@
 
 using namespace std;
 
-void testMatAddition(); 
+void testMatAddition();
+void testMatVectorMultiplication();
 void testMatDeterminant();
 
 int main()
 {
     testMatAddition();
+    testMatVectorMultiplication();
     testMatDeterminant();
 }
 
@@ -57,6 +59,36 @@ void testMatAddition()
         }
     }
     delete sumPtr;
+}
+
+void testMatVectorMultiplication()
+{
+    auto mat = SquareMatrix(3);
+    int rows[3][3]{
+        {2,-3,1},
+        {2,0,-1},
+        {1,4,5},
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat[i][j] = rows[i][j];
+        }
+    }
+
+    vector<int> vec{ 2, -5, 31 };
+    vector<int> expected{ 50, -27, 137 };
+    auto productPtr = mat * vec;
+
+    for (int i = 0; i < 3; i++)
+    {
+        if ((*productPtr).at(i) != expected.at(i))
+        {
+            cout << "FAILED: VECTOR MULTIPLICATION TEST" << endl;
+            cout << (*productPtr).at(i) << " exp: " << expected.at(i) << endl;
+        }
+    }
+    delete productPtr;
 }
 
 void testMatDeterminant()

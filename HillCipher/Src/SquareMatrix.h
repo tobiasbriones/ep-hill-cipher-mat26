@@ -18,6 +18,8 @@ private:
 	static void getMinorMat(const SquareMatrix&, SquareMatrix&, int, int);
 	static void getAdjoint(const SquareMatrix&, SquareMatrix&);
 	static int mod26(int);
+	static int gcdExtended(int, int, int*, int*);
+	static int modInverse(int, int);
 
 public:
 	SquareMatrix(int);

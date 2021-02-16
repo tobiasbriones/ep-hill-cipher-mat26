@@ -15,6 +15,8 @@ private:
 	int** matrix;
 
 	static int computeDeterminant(const SquareMatrix&);
+	static void getMinorMat(const SquareMatrix&, SquareMatrix&, int, int);
+	static void getAdjoint(const SquareMatrix&, SquareMatrix&);
 
 public:
 	SquareMatrix(int);

@@ -9,12 +9,14 @@ using namespace std;
 void testMatAddition();
 void testMatVectorMultiplication();
 void testMatDeterminant();
+void testMatAdjoint();
 
 int main()
 {
     testMatAddition();
     testMatVectorMultiplication();
     testMatDeterminant();
+    testMatAdjoint();
 }
 
 void testMatAddition()
@@ -111,4 +113,41 @@ void testMatDeterminant()
     {
         cout << "FAILED: DETERMINANT TEST" << endl;
     }
+}
+
+void testMatAdjoint()
+{
+    auto mat = SquareMatrix(3);
+    int rows[3][3]{
+        {2,-3,1},
+        {2,0,-1},
+        {1,4,5},
+    };
+
+    auto expected = SquareMatrix(3);
+    int rowsExpected[3][3]{
+        {4, 19, 3},
+        {-11, 9, 4},
+        {8, -11, 6},
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat[i][j] = rows[i][j];
+            expected[i][j] = rowsExpected[i][j];
+        }
+    }
+    auto adjPtr = mat.adj();
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++) {
+            if ((*adjPtr)[i][j] != expected[i][j])
+            {
+                cout << "FAILED: ADJOINT TEST" << endl;
+                cout << (*adjPtr)[i][j] << " has " << expected[i][j] << endl;
+            }
+        }
+    }
+    delete adjPtr;
 }

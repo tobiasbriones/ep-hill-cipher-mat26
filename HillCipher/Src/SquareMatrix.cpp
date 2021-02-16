@@ -83,8 +83,9 @@ int SquareMatrix::det() const
 
 SquareMatrix* SquareMatrix::adj() const
 {
-	auto* adj = new SquareMatrix(n);
-	return adj;
+	auto adjPtr = new SquareMatrix(n);
+	getAdjoint(*this, *adjPtr);
+	return adjPtr;
 }
 
 SquareMatrix* SquareMatrix::inv() const
@@ -123,4 +124,53 @@ int SquareMatrix::computeDeterminant(const SquareMatrix& mat)
 		det = det + (pow(-1, x) * mat[0][x] * computeDeterminant(submat));
 	}
 	return det;
+}
+
+void SquareMatrix::getMinorMat(const SquareMatrix& mat, SquareMatrix& temp, int p, int q)
+{
+	int n = mat.size();
+	int x = 0;
+	int y = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (i != p && j != q)
+			{
+				temp[x][y++] = mat[i][j];
+
+				if (y == n - 1)
+				{
+					y = 0;
+					x++;
+				}
+			}
+		}
+	}
+}
+
+void SquareMatrix::getAdjoint(const SquareMatrix& mat, SquareMatrix& adj)
+{
+	int n = mat.size();
+
+	if (n == 1)
+	{
+		adj[0][0] = 1;
+		return;
+	}
+	
+	int sign = 1;
+	SquareMatrix temp(n - 1);
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			getMinorMat(mat, temp, i, j);
+
+			sign = ((i + j) % 2 == 0) ? 1 : -1;
+			adj[j][i] = sign * temp.det();
+		}
+	}
 }

@@ -22,10 +22,12 @@
     <ClCompile Include="Src\HillCipher.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\SquareMatrix.cpp" />
+    <ClCompile Include="Src\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\HillCipher.h" />
     <ClInclude Include="Src\SquareMatrix.h" />
+    <ClInclude Include="Src\Test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

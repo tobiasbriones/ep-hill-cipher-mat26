@@ -24,12 +24,18 @@
     <ClCompile Include="Src\SquareMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\HillCipher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\SquareMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

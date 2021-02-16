@@ -21,6 +21,10 @@ private:
 	static int gcdExtended(int, int, int*, int*);
 	static int modInverse(int, int);
 
+protected:
+	SquareMatrix* sum(const SquareMatrix&) const;
+	vector<int>* mul(const vector<int>&) const;
+
 public:
 	SquareMatrix(int);
 	~SquareMatrix();

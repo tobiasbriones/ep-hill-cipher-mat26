@@ -27,16 +27,13 @@ SquareMatrix::~SquareMatrix()
 	delete [] matrix;
 }
 
-int* SquareMatrix::operator[](int i) const {
-	return matrix[i];
-}
 
-SquareMatrix* SquareMatrix::operator+(const SquareMatrix& other) const 
+SquareMatrix* SquareMatrix::sum(const SquareMatrix& other) const
 {
 	if (n != other.size()) {
 		throw "Matrices must have the same size";
 	}
-	auto *resultPtr = new SquareMatrix(n);
+	auto* resultPtr = new SquareMatrix(n);
 
 	for (int i = 0; i < n; i++)
 	{
@@ -48,7 +45,7 @@ SquareMatrix* SquareMatrix::operator+(const SquareMatrix& other) const
 	return resultPtr;
 }
 
-vector<int>* SquareMatrix::operator*(const vector<int>& vec) const
+vector<int>* SquareMatrix::mul(const vector<int>& vec) const
 {
 	if (n != vec.size()) {
 		throw "Vector must have the same size as the matrix";
@@ -69,6 +66,21 @@ vector<int>* SquareMatrix::operator*(const vector<int>& vec) const
 		(*productPtr)[i] = rowSum;
 	}
 	return productPtr;
+}
+
+
+int* SquareMatrix::operator[](int i) const {
+	return matrix[i];
+}
+
+SquareMatrix* SquareMatrix::operator+(const SquareMatrix& other) const 
+{
+	return sum(other);
+}
+
+vector<int>* SquareMatrix::operator*(const vector<int>& vec) const
+{
+	return mul(vec);
 }
 
 int SquareMatrix::size() const

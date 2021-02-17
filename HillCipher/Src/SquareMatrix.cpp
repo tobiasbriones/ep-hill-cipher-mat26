@@ -30,7 +30,8 @@ SquareMatrix::~SquareMatrix()
 
 SquareMatrix* SquareMatrix::sum(const SquareMatrix& other) const
 {
-	if (n != other.size()) {
+	if (n != other.size()) 
+	{
 		throw "Matrices must have the same size";
 	}
 	auto* resultPtr = new SquareMatrix(n);
@@ -47,7 +48,8 @@ SquareMatrix* SquareMatrix::sum(const SquareMatrix& other) const
 
 vector<int>* SquareMatrix::mul(const vector<int>& vec) const
 {
-	if (n != vec.size()) {
+	if (n != vec.size()) 
+	{
 		throw "Vector must have the same size as the matrix";
 	}
 
@@ -113,8 +115,10 @@ SquareMatrix* SquareMatrix::inv() const
 	// TODO implement scalar multiplication operator
 	auto factor = 1 / determinant;
 
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < n; j++) 
+		{
 			(*invPtr)[i][j] = factor * (*adjPtr)[i][j];
 		}
 	}
@@ -137,13 +141,16 @@ int SquareMatrix::computeDeterminant(const SquareMatrix& mat)
 	int det = 0;
 	SquareMatrix submat(n - 1);
 
-	for (int x = 0; x < n; x++) {
+	for (int x = 0; x < n; x++) 
+	{
 		int subi = 0;
 
-		for (int i = 1; i < n; i++) {
+		for (int i = 1; i < n; i++) 
+		{
 			int subj = 0;
 
-			for (int j = 0; j < n; j++) {
+			for (int j = 0; j < n; j++) 
+			{
 				if (j == x)
 				{
 					continue;

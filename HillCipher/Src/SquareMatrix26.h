@@ -19,6 +19,6 @@ public:
 	SquareMatrix26* operator+(const SquareMatrix26&) const;
 	vector<int>* operator*(const vector<int>&) const;
 	int det() const;
-	SquareMatrix* inv() const;
+	SquareMatrix26* inv() const;
 
 };

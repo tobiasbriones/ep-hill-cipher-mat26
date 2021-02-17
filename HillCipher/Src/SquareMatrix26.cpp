@@ -27,7 +27,7 @@ int SquareMatrix26::det() const
 	return mod26(computeDeterminant(*this));
 }
 
-SquareMatrix* SquareMatrix26::inv() const
+SquareMatrix26* SquareMatrix26::inv() const
 {
 	auto determinant = det();
 

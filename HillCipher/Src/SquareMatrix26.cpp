@@ -33,7 +33,7 @@ SquareMatrix26* SquareMatrix26::inv() const
 
 	if (determinant == 0)
 	{
-		throw "The matrix must not be singular";
+		throw std::exception("The matrix must not be singular");
 	}
 	auto n = size();
 	auto adjPtr = adj();

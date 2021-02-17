@@ -1,11 +1,14 @@
 // Copyright (c) 2021 Tobias Briones. All rights reserved.
 
+#include <iostream>
 #include <fstream>
 #include "Test.h"
 
 using std::string;
 using std::ifstream;
 using std::ofstream;
+using std::cout;
+using std::endl;
 
 const string DEC_FILE_NAME = "dec.txt";
 const string ENC_FILE_NAME = "enc.txt";
@@ -72,8 +75,15 @@ void decrypt()
     mat[1][1] = 7;
     hill.setKey(mat);
 
-    auto enc = read(ENC_FILE_NAME);
-    auto msg = hill.decrypt(enc);
-    
-    write(msg, DEC_FILE_NAME);
+    try
+    {
+        auto enc = read(ENC_FILE_NAME);
+        auto msg = hill.decrypt(enc);
+
+        write(msg, DEC_FILE_NAME);
+    }
+    catch (const std::exception& e)
+    {
+        cout << e.what() << endl;
+    }
 }

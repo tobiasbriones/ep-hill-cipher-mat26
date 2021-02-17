@@ -32,7 +32,7 @@ SquareMatrix* SquareMatrix::sum(const SquareMatrix& other) const
 {
 	if (n != other.size()) 
 	{
-		throw "Matrices must have the same size";
+		throw std::exception("Matrices must have the same size");
 	}
 	auto* resultPtr = new SquareMatrix(n);
 
@@ -50,7 +50,7 @@ vector<int>* SquareMatrix::mul(const vector<int>& vec) const
 {
 	if (n != vec.size()) 
 	{
-		throw "Vector must have the same size as the matrix";
+		throw std::exception("Vector must have the same size as the matrix");
 	}
 
 	auto productPtr = new vector<int>(n);
@@ -107,7 +107,7 @@ SquareMatrix* SquareMatrix::inv() const
 
 	if (determinant == 0)
 	{
-		throw "The matrix must not be singular";
+		throw std::exception("The matrix must not be singular");
 	}
 	auto adjPtr = adj();
 	auto invPtr = new SquareMatrix(n);

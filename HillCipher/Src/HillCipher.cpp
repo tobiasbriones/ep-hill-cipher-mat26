@@ -16,7 +16,7 @@ void HillCipher::setKey(SquareMatrix26& value)
 {
     if (value.det() == 0)
     {
-        throw "Can't use a singular matrix as key";
+        throw std::exception("Can't use a singular matrix as key");
     }
     auto n = matPtr->size();
 
@@ -81,7 +81,7 @@ string HillCipher::decrypt(string enc)
 
     if ((m % n) != 0)
     {
-        throw "Invalid cipher text";
+        throw std::exception("Invalid cipher text");
     }
 
     for (int i = 0; i < m; i += n)

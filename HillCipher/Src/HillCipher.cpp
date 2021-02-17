@@ -14,6 +14,10 @@ HillCipher::~HillCipher()
 
 void HillCipher::setKey(SquareMatrix26& value)
 {
+    if (value.det() == 0)
+    {
+        throw "Can't use a singular matrix as key";
+    }
     auto n = matPtr->size();
 
     for (int i = 0; i < n; i++)

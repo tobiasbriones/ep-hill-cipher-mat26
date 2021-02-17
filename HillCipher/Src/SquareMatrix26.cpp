@@ -42,8 +42,8 @@ SquareMatrix* SquareMatrix26::inv() const
 	// TODO implement scalar multiplication operator
 	auto factor = modInverse(determinant, 26);
 
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
 			auto product = factor * (*adjPtr)[i][j];
 			(*invPtr)[i][j] = mod26(product);
 		}

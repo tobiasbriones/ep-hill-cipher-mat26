@@ -114,8 +114,8 @@ SquareMatrix* SquareMatrix::inv() const
 	// TODO implement scalar multiplication operator
 	auto factor = 1 / determinant;
 
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
 			(*invPtr)[i][j] = factor * (*adjPtr)[i][j];
 		}
 	}

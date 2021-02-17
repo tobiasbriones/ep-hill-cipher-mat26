@@ -2,7 +2,6 @@
 
 #include "SquareMatrix26.h"
 
-
 SquareMatrix26::SquareMatrix26(int n) : SquareMatrix(n) {}
 
 SquareMatrix26* SquareMatrix26::operator+(const SquareMatrix26& other) const
@@ -21,6 +20,36 @@ vector<int>* SquareMatrix26::operator*(const vector<int>& vec) const
 
 	delete baseMulPtr;
 	return mulPtr;
+}
+
+int SquareMatrix26::det() const
+{
+	return mod26(computeDeterminant(*this));
+}
+
+SquareMatrix* SquareMatrix26::inv() const
+{
+	auto determinant = det();
+
+	if (determinant == 0)
+	{
+		throw "The matrix must not be singular";
+	}
+	auto n = size();
+	auto adjPtr = adj();
+	auto invPtr = new SquareMatrix26(n);
+
+	// TODO implement scalar multiplication operator
+	auto factor = modInverse(determinant, 26);
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			auto product = factor * (*adjPtr)[i][j];
+			(*invPtr)[i][j] = mod26(product);
+		}
+	}
+	delete adjPtr;
+	return invPtr;
 }
 
 vector<int>* SquareMatrix26::toVec26(vector<int>& vec)
@@ -45,4 +74,33 @@ SquareMatrix26* SquareMatrix26::toMat26(SquareMatrix& mat)
 		}
 	}
 	return mat26Ptr;
+}
+
+int SquareMatrix26::gcdExtended(int a, int b, int* x, int* y)
+{
+	if (a == 0)
+	{
+		*x = 0, * y = 1;
+		return b;
+	}
+	int x1;
+	int y1;
+	int gcd = gcdExtended(b % a, a, &x1, &y1);
+
+	*x = y1 - (b / a) * x1;
+	*y = x1;
+	return gcd;
+}
+
+int SquareMatrix26::modInverse(int a, int m)
+{
+	int x;
+	int y;
+	int g = gcdExtended(a, m, &x, &y);
+
+	if (g != 1)
+	{
+		return -1;
+	}
+	return (x % m + m) % m;
 }

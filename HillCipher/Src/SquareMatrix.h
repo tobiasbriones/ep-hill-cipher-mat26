@@ -14,15 +14,14 @@ private:
 	int n;
 	int** matrix;
 
-	static int computeDeterminant(const SquareMatrix&);
 	static void getMinorMat(const SquareMatrix&, SquareMatrix&, int, int);
 	static void getAdjoint(const SquareMatrix&, SquareMatrix&);
-	static int gcdExtended(int, int, int*, int*);
-	static int modInverse(int, int);
 
 protected:
 	SquareMatrix* sum(const SquareMatrix&) const;
 	vector<int>* mul(const vector<int>&) const;
+
+	static int computeDeterminant(const SquareMatrix&);
 	static int mod26(int);
 
 public:
@@ -34,9 +33,7 @@ public:
 	vector<int>* operator*(const vector<int>&) const;
 	int size() const;
 	int det() const;
-	int det26() const;
 	SquareMatrix* adj() const;
 	SquareMatrix* inv() const;
-	SquareMatrix* inv26() const;
 
 };

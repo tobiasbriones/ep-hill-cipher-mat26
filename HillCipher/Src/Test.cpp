@@ -178,7 +178,7 @@ void testMatDeterminant()
 
 void testMatDeterminant26()
 {
-    auto mat = SquareMatrix(3);
+    auto mat = SquareMatrix26(3);
     int rows[3][3]{
         {10, 5, 12},
         {3, 14, 21},
@@ -192,7 +192,7 @@ void testMatDeterminant26()
             mat[i][j] = rows[i][j];
         }
     }
-    auto det = mat.det26();
+    auto det = mat.det();
 
     if (det != 7)
     {
@@ -281,14 +281,14 @@ void testMatInverse()
 
 void testMatInverse26()
 {
-    auto mat = SquareMatrix(3);
+    auto mat = SquareMatrix26(3);
     int rows[3][3]{
         {10, 5, 12},
         {3, 14, 21},
         {8, 9, 11},
     };
 
-    auto expected = SquareMatrix(3);
+    auto expected = SquareMatrix26(3);
     int rowsExpected[3][3]{
         {21, 15, 17},
         {23, 2, 16},
@@ -303,7 +303,7 @@ void testMatInverse26()
             expected[i][j] = rowsExpected[i][j];
         }
     }
-    auto invPtr = mat.inv26();
+    auto invPtr = mat.inv();
 
     for (int i = 0; i < 3; i++)
     {

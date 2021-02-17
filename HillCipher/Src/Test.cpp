@@ -108,7 +108,7 @@ void testMatVectorMultiplication()
     }
 
     vector<int> vec{ 2, -5, 31 };
-    vector<int> expected{ 50, -27, 137 };
+    vector<int> expected{ 25, 118, 162 };
     auto productPtr = mat * vec;
 
     for (int i = 0; i < 3; i++)
@@ -139,7 +139,7 @@ void testMat26VectorMultiplication()
     }
 
     vector<int> vec{ 2, -5, 31 };
-    vector<int> expected{ 24, 25, 7 };
+    vector<int> expected{ 25, 14, 6};
     auto productPtr = mat * vec;
 
     for (int i = 0; i < 3; i++)

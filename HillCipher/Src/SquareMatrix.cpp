@@ -59,7 +59,7 @@ vector<int>* SquareMatrix::mul(const vector<int>& vec) const
 
 		for (int j = 0; j < n; j++)
 		{
-			auto aij = matrix[i][j];
+			auto aij = matrix[j][i];
 			auto xj = vec.at(j);
 			rowSum += aij * xj;
 		}
@@ -67,7 +67,6 @@ vector<int>* SquareMatrix::mul(const vector<int>& vec) const
 	}
 	return productPtr;
 }
-
 
 int* SquareMatrix::operator[](int i) const {
 	return matrix[i];

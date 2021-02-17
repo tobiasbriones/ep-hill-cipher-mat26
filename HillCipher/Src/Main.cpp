@@ -19,11 +19,6 @@ void write(string str, string fileName);
 
 int main()
 {
-    string str = read(ENC_FILE_NAME);
-
-    cout << str << endl;
-
-    write("messg", DEC_FILE_NAME);
     testAll();
 }
 

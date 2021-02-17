@@ -3,6 +3,8 @@
 #pragma once
 
 #include<string>
+#include "SquareMatrix26.h"
+#include "Alphabet.h"
 
 using std::string;
 
@@ -10,12 +12,14 @@ class HillCipher
 {
 
 private:
-	int n;
+	const SquareMatrix26* matPtr;
 
 public:
 	HillCipher(int);
+	~HillCipher();
 
-	string encrypt(string);
+	void setKey(SquareMatrix26&);
+	string encrypt(string);;
 	string decrypt(string);
 
 };

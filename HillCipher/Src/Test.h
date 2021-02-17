@@ -3,6 +3,7 @@
 #pragma once
 
 #include "SquareMatrix.h"
+#include "SquareMatrix26.h"
 #include <iostream>
 
 using std::cout;
@@ -10,7 +11,11 @@ using std::endl;
 
 void testMatAddition();
 
+void testMat26Addition();
+
 void testMatVectorMultiplication();
+
+void testMat26VectorMultiplication();
 
 void testMatDeterminant();
 

@@ -46,6 +46,50 @@ void testMatAddition()
     delete sumPtr;
 }
 
+void testMat26Addition()
+{
+    auto mat = SquareMatrix26(3);
+    auto mat1 = SquareMatrix26(3);
+
+    int rows[3][3]{
+        {2,-3,1},
+        {2,0,-1},
+        {1,4,5},
+    };
+    int rows1[3][3]{
+        {-1,-2,-3},
+        {10,11,100},
+        {-1,-2,-3},
+    };
+    int expected[3][3]{
+        {1, 21, 24},
+        {12,11,21},
+        {0,2,2},
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat[i][j] = rows[i][j];
+            mat1[i][j] = rows1[i][j];
+        }
+    }
+    auto sumPtr = mat + mat1;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            int* row = (*sumPtr)[i];
+            int v = row[j];
+            int e = expected[i][j];
+
+            if (v != e)
+            {
+                cout << "FAILED: ADDITION26 TEST" << endl;
+            }
+        }
+    }
+    delete sumPtr;
+}
+
 void testMatVectorMultiplication()
 {
     auto mat = SquareMatrix(3);
@@ -72,7 +116,37 @@ void testMatVectorMultiplication()
         if ((*productPtr).at(i) != expected.at(i))
         {
             cout << "FAILED: VECTOR MULTIPLICATION TEST" << endl;
-            cout << (*productPtr).at(i) << " exp: " << expected.at(i) << endl;
+        }
+    }
+    delete productPtr;
+}
+
+void testMat26VectorMultiplication()
+{
+    auto mat = SquareMatrix26(3);
+    int rows[3][3]{
+        {2,-3,1},
+        {2,0,-1},
+        {1,4,5},
+    };
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            mat[i][j] = rows[i][j];
+        }
+    }
+
+    vector<int> vec{ 2, -5, 31 };
+    vector<int> expected{ 24, 25, 7 };
+    auto productPtr = mat * vec;
+
+    for (int i = 0; i < 3; i++)
+    {
+        if ((*productPtr).at(i) != expected.at(i))
+        {
+            cout << "FAILED: VECTOR26 MULTIPLICATION TEST" << endl;
         }
     }
     delete productPtr;
@@ -247,7 +321,9 @@ void testMatInverse26()
 void testAll()
 {
     testMatAddition();
+    testMat26Addition();
     testMatVectorMultiplication();
+    testMat26VectorMultiplication();
     testMatDeterminant();
     testMatDeterminant26();
     testMatAdjoint();

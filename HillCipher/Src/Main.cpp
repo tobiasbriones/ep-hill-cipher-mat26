@@ -1,9 +1,6 @@
 // Copyright (c) 2021 Tobias Briones. All rights reserved.
 
-#include <iostream>
 #include <fstream>
-#include "HillCipher.h"
-#include "SquareMatrix.h"
 #include "Test.h"
 
 using std::string;

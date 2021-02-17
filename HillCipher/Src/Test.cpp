@@ -318,6 +318,42 @@ void testMatInverse26()
     delete invPtr;
 }
 
+void testHillEncrypt()
+{
+    HillCipher hill1(2);
+    SquareMatrix26 mat1(2);
+    string expected1 = "delw";
+
+    mat1[0][0] = 11;
+    mat1[0][1] = 8;
+    mat1[1][0] = 3;
+    mat1[1][1] = 7;
+    hill1.setKey(mat1);
+
+    if (hill1.encrypt("july") != expected1)
+    {
+        cout << "FAILED: HILL ENCRYPT 1 TEST" << endl;
+    }
+}
+
+void testHillDecrypt()
+{
+    HillCipher hill1(2);
+    SquareMatrix26 mat1(2);
+    string expected1 = "july";
+
+    mat1[0][0] = 11;
+    mat1[0][1] = 8;
+    mat1[1][0] = 3;
+    mat1[1][1] = 7;
+    hill1.setKey(mat1);
+
+    if (hill1.decrypt("delw") != expected1)
+    {
+        cout << "FAILED: HILL DECRYPT 1 TEST" << endl;
+    }
+}
+
 void testAll()
 {
     testMatAddition();
@@ -329,4 +365,6 @@ void testAll()
     testMatAdjoint();
     testMatInverse();
     testMatInverse26();
+    testHillEncrypt();
+    testHillDecrypt();
 }

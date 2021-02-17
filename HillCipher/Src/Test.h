@@ -2,9 +2,10 @@
 
 #pragma once
 
+#include <iostream>
 #include "SquareMatrix.h"
 #include "SquareMatrix26.h"
-#include <iostream>
+#include "HillCipher.h"
 
 using std::cout;
 using std::endl;
@@ -26,5 +27,9 @@ void testMatAdjoint();
 void testMatInverse();
 
 void testMatInverse26();
+
+void testHillEncrypt();
+
+void testHillDecrypt();
 
 void testAll();

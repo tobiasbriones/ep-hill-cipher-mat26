@@ -26,6 +26,7 @@
     <ClCompile Include="Src\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Alphabet.h" />
     <ClInclude Include="Src\SquareMatrix26.h" />
     <ClInclude Include="Src\HillCipher.h" />
     <ClInclude Include="Src\SquareMatrix.h" />

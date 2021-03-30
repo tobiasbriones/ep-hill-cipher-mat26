@@ -12,14 +12,16 @@ class HillCipher
 {
 
 private:
-	const SquareMatrix26* matPtr;
+    const SquareMatrix26* matPtr;
 
 public:
-	HillCipher(int);
-	~HillCipher();
+    HillCipher(int);
 
-	void setKey(SquareMatrix26&);
-	string encrypt(string);;
-	string decrypt(string);
+    ~HillCipher();
 
+    void setKey(SquareMatrix26&);
+
+    string encrypt(string);;
+
+    string decrypt(string);
 };

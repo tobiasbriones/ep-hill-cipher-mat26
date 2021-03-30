@@ -4,12 +4,12 @@
 
 HillCipher::HillCipher(int n)
 {
-	this->matPtr = new SquareMatrix26(n);
+    this->matPtr = new SquareMatrix26(n);
 }
 
 HillCipher::~HillCipher()
 {
-	delete matPtr;
+    delete matPtr;
 }
 
 void HillCipher::setKey(SquareMatrix26& value)
@@ -53,7 +53,7 @@ string HillCipher::encrypt(string msg)
     {
         for (int x = 0; x < n; x++)
         {
-            char ch = (char)toupper(msg[i + x]);
+            char ch = (char) toupper(msg[i + x]);
 
             vec[x] = alphabet.canonicalPositionOf(ch);
         }
@@ -67,7 +67,7 @@ string HillCipher::encrypt(string msg)
         }
         delete productPtr;
     }
-	return enc;
+    return enc;
 }
 
 string HillCipher::decrypt(string enc)
@@ -88,7 +88,7 @@ string HillCipher::decrypt(string enc)
     {
         for (int y = 0; y < n; y++)
         {
-            char ch = (char)toupper(enc[i + y]);
+            char ch = (char) toupper(enc[i + y]);
 
             vec[y] = alphabet.canonicalPositionOf(ch);
         }

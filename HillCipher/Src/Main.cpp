@@ -33,8 +33,8 @@ string read(string fileName)
 {
     string str;
     ifstream file(fileName);
-    
-    while (getline(file, str));
+
+    while (getline(file, str)) {}
     return str;
 }
 
@@ -45,7 +45,6 @@ void write(string str, string fileName)
     file << str;
     file.close();
 }
-
 
 void encrypt()
 {

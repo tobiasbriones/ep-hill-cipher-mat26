@@ -20,4 +20,4 @@ Copyright © 2021 Tobias Briones. All rights reserved.
 
 ### License
 
-This software is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).

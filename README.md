@@ -1,12 +1,12 @@
 # Example Project: Hill Cipher Mat26
 
-Example project for a Hill cipher and Matrix under Z26 implementation.
+Example project for a Hill Cipher algorithm with a Matrix under the Z26 field implementation.
 
 ## Contact
 
-This software: [GitHub Repository](https://github.com/TobiasBriones/example.cs.cryptography.cpp.hill-cipher-mat26)
+This project: [Repository](https://github.com/tobiasbriones/ep-hill-cipher-mat26)
 
-Tobias Briones: [GitHub](https://github.com/TobiasBriones)
+Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 Example Project: [App](https://tobiasbriones.github.io/example-project)
 
@@ -14,7 +14,7 @@ Example Project: [App](https://tobiasbriones.github.io/example-project)
 
 **Example Project: Hill Cipher Mat26**
 
-Example project for a Hill cipher and Matrix under Z26 implementation.
+Example project for a Hill Cipher algorithm with a Matrix under the Z26 field implementation.
 
 Copyright © 2021 Tobias Briones. All rights reserved.
 

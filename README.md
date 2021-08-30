@@ -9,6 +9,28 @@
 
 Example project for a Hill Cipher algorithm with a Matrix under the Z26 field implementation.
 
+**In short:** 
+
+- You can check out the test file to understand the concepts implemented into this source
+files.
+
+- There is an implementation of a SquareMatrix which is a normal square matrix with common operations
+and a subclass of this matrix which is a SquareMatrix26 which works under the field Z26.
+
+- The Alphabet26 struct helps the algorithm to be computed by provided the English alphabet of 26
+characters (`A-Z`) and as you know the character "A" in ASCII has the decimal value of 65 so that this
+struct is a representation of the integers module 26 (Z26).
+
+- Finally, there is the HillCipher implementation made possible by the aforementioned tools.
+
+The program is executed and reads the text file (dec.txt) which contains a message that can be encrypted, and
+saved into the other file (enc.txt), then it reads the other file (enc.txt), decrypts the secret message and
+saves it into the dec.txt file. Also, notice that the key is set to the algorithm prior to proceeding to encrypt
+or decrypt.
+
+More work that can be done on this program is to add more operator overloading and tests to verify if
+everything is working fine.
+
 ## Contact
 
 This project: [Repository](https://github.com/tobiasbriones/ep-hill-cipher-mat26)

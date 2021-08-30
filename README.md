@@ -30,6 +30,9 @@ algorithm prior to proceeding to encrypt or decrypt.
 More work that can be done on this program is to add more operator overloading and tests to verify
 if everything is working fine.
 
+Additionally, I got this project [ep-cryptosystems](https://github.com/tobiasbriones/ep-cryptosystems)
+implemented in Go for computing classical cryptosystem algorithms.
+
 ## Contact
 
 This project: [Repository](https://github.com/tobiasbriones/ep-hill-cipher-mat26)

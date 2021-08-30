@@ -17,9 +17,9 @@ files.
 - There is an implementation of a SquareMatrix which is a normal square matrix with common operations
 and a subclass of this matrix which is a SquareMatrix26 which works under the field Z26.
 
-- The Alphabet26 struct helps the algorithm to be computed by provided the English alphabet of 26
-characters (`A-Z`) and as you know the character "A" in ASCII has the decimal value of 65 so that this
-struct is a representation of the integers module 26 (Z26).
+- The Alphabet26 struct helps the algorithm to be computed by providing the English alphabet of 26
+characters (`A-Z`). As you know, the character "A" in ASCII has the decimal value of 65 so that this
+struct is a representation of the integers modulo 26 (Z26).
 
 - Finally, there is the HillCipher implementation made possible by the aforementioned tools.
 

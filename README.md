@@ -13,7 +13,7 @@ Example project for a Hill Cipher algorithm with a Matrix under the Z26 field im
 - You can check out the test file to understand the concepts implemented into this source files.
 
 - There is an implementation of a SquareMatrix which is a normal square matrix with common
-  operations and a subclass of this matrix which is a SquareMatrix26 which works under the field
+  operations, and a subclass of this matrix which is a SquareMatrix26 which works under the field
   Z26.
 
 - The Alphabet26 struct helps the algorithm to be computed by providing the English alphabet of 26

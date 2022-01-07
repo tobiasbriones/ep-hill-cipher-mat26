@@ -1,8 +1,8 @@
 # Example Project: Hill Cipher Mat26
 
-[![EP](https://raw.githubusercontent.com/tobiasbriones/images/main/example-projects/ep-hill-cipher-mat26/badge.svg)](https://tobiasbriones.github.io/example-project/ep/hill-cipher-mat26)
+[![Project](https://raw.githubusercontent.com/tobiasbriones/images/main/example-projects/ep-hill-cipher-mat26/badge.svg)](https://tobiasbriones.github.io/example-project/ep/hill-cipher-mat26)
 &nbsp;
-[![GitHub Repository](https://raw.githubusercontent.com/tobiasbriones/general-images/main/example-projects/badges/ep-gh-repo-badge.svg)](https://github.com/tobiasbriones/ep-hill-cipher-mat26)
+[![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/tobiasbriones/ep-hill-cipher-mat26)
 
 [![GitHub Project License](https://img.shields.io/github/license/tobiasbriones/ep-hill-cipher-mat26.svg?style=flat-square)](https://github.com/tobiasbriones/ep-hill-cipher-mat26/blob/main/LICENSE)
 
